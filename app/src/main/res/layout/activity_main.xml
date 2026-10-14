@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FCEFF3"
@@ -11,147 +10,139 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ButtonEvent 실습"
+        android:text="CheckBox 실습"
         android:textColor="#558B2F"
         android:textSize="18sp"
         android:textStyle="bold|italic" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="16dp">
-
-        <ImageView
-            android:id="@+id/ivMain"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="달팽이"
-            android:scaleType="fitCenter"
-            android:src="@drawable/question" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.27" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.995" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.06" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.82" />
-
-        <ImageView
-            android:id="@+id/ivShell"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:contentDescription="선택한 껍데기"
-            android:scaleType="fitXY"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@id/glBottom"
-            app:layout_constraintEnd_toEndOf="@id/glRight"
-            app:layout_constraintStart_toStartOf="@id/glLeft"
-            app:layout_constraintTop_toTopOf="@id/glTop" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <!-- 왼쪽: img1(소방차), img3(핸드믹서) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <CheckBox
+                    android:id="@+id/cb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="소방차 선택" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:contentDescription="소방차"
+                    android:src="@drawable/img1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <CheckBox
+                    android:id="@+id/cb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="핸드믹서 선택" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:contentDescription="핸드믹서"
+                    android:src="@drawable/img3" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 가운데: 소방관 -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:contentDescription="소방관"
+            android:scaleType="fitCenter"
+            android:src="@drawable/firefighter" />
+
+        <!-- 오른쪽: img2(청진기), img4(장갑) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <CheckBox
+                    android:id="@+id/cb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="청진기 선택" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:contentDescription="청진기"
+                    android:src="@drawable/img2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <CheckBox
+                    android:id="@+id/cb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="장갑 선택" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:contentDescription="장갑"
+                    android:src="@drawable/img4" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00838F"
+        android:text="결과보기"
+        android:textColor="#FFFFFF" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="#000000" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="#000000" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="3"
-            android:textColor="#000000" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="4"
-            android:textColor="#000000" />
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvResult"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/btn1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="1번 껍데기"
-            android:scaleType="fitCenter"
-            android:src="@drawable/answer1" />
-
-        <ImageButton
-            android:id="@+id/btn2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="2번 껍데기"
-            android:scaleType="fitCenter"
-            android:src="@drawable/answer2" />
-
-        <ImageButton
-            android:id="@+id/btn3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="3번 껍데기"
-            android:scaleType="fitCenter"
-            android:src="@drawable/answer3" />
-
-        <ImageButton
-            android:id="@+id/btn4"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:contentDescription="4번 껍데기"
-            android:scaleType="fitCenter"
-            android:src="@drawable/answer4" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="소방관의 용품을 선택해주세요"
+        android:textColor="#D32F2F"
+        android:textSize="12sp" />
 </LinearLayout>
