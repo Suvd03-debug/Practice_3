@@ -24,3 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Practice_3"
 include(":app")
+include(":5-2")
+include(":5-4")
+include(":5-5")
